@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cadastro de clientes</h1>
+
+    <div class="formulario">
+        <div class="formulario-nome">
+            <label for="">Nome: </label>
+            <input type="text" id="nome">
+        </div>
+        <div class="formulario-cpf">
+            <label for="">CPF: </label>
+            <input type="text" id="cpf">
+        </div>
+    </div>
+
+    <div class="botoes">
+        <div class="botao-cadastrar">
+            <button onclick="clienteController.inserir(event)">Inserir</button>
+        </div>
+        <!-- <div class="botao-listar">
+            <button onclick="clienteController.listar()">Listar</button>
+        </div> -->
+    </div>
+
+    <div></div>
+        <ul class="listaClientes">
+        </ul>
+    </div>
+
+    <script src="./js/model/cliente.js"></script>
+    <script src="./js/model/clientes.js"></script>
+    <script src="./js/model/conta.js"></script>
+    <script src="./js/model/contas.js"></script>
+    <script src="./js/model/cliente-especial.js"></script>
+    <script src="./js/model/Poupanca.js"></script>
+    <script src="./js/model/conta-bonificada.js"></script>
+    <script src="./js/controller/conta-controller.js"></script>
+    <script src="./js/controller/cliente-controller.js"></script>
+    <script src="./js/app2.js"></script>
+</body>
+</html>
