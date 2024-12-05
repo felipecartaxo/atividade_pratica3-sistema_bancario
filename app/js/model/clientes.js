@@ -1,4 +1,4 @@
-// Requisito 2: Desenvolver a classe cliente
+// Requisito 2: Desenvolver a classe clientes
 class Clientes {
     constructor() {
         this.clientes = new Array();

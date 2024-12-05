@@ -20,6 +20,9 @@ const cli3 = new Cliente("João da Silva", "55667");
 cli.inserir(cli1);
 cli.inserir(cli2);
 cli.inserir(cli3);
+// Atribuindo contas aos clientes
+cli1.setConta(new Conta("3", 500.00));
+cli3.setConta(new Conta("4", 120.00));
 // Exibindo a lista de clientes
 console.log(`Listando clientes: ${cli.listarDadosClientes()}`);
 // Removendo um dos clientes da lista

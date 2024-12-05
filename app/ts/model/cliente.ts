@@ -39,6 +39,6 @@ class Cliente {
 
     // toString
     toString(): string {
-        return `Nome: ${this._nome} - CPF: ${this._cpf} - Conta: ${this._conta.numero}`;
+        return `Nome: ${this._nome} - CPF: ${this._cpf} - Conta: ${this._conta}`;
     }
 }
