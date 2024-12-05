@@ -3,26 +3,39 @@ class ClienteController {
     // Atributos
     private inputNome: HTMLInputElement;
     private inputCpf: HTMLInputElement;
+    private inputConta: HTMLInputElement;
 
     // Lista de clientes (simulando uma tabela em um banco de dados)
     private clientes: Clientes;
 
+    // Lista de contas
+    private contas: Contas;
+
     constructor() {
         this.inputNome = <HTMLInputElement>document.querySelector("#nome");
         this.inputCpf = <HTMLInputElement>document.querySelector("#cpf");
+        this.inputConta = <HTMLInputElement>document.querySelector("#conta");
 
-        // Cria uma lista de clientes
         this.clientes = new Clientes();
+        this.contas = new Contas();
     }
 
     // Insere um cliente na lista de clientes
     inserir(evento: Event): void {
         evento.preventDefault();
 
-        if (this.inputNome.value === "" || this.inputCpf.value === "") 
-            throw new Error("Favor preencher todos os campos")
         // Instancia um novo cliente com os dados das inputs
-        let novoCliente = new Cliente(this.inputNome.value, this.inputCpf.value);
+        const novoCliente = new Cliente(this.inputNome.value, this.inputCpf.value);
+
+        // Verifica se a conta existe (a partir de seu número)
+        const contaVerificada = this.contas.pesquisar(this.inputConta.value);
+
+        if (contaVerificada) {
+            novoCliente.setConta(contaVerificada);
+        }
+        else {
+            throw new Error("Conta inexistente");
+        }
 
         // Insere o cliente instanciado na lista de clientes
         this.clientes.inserir(novoCliente);
@@ -30,7 +43,7 @@ class ClienteController {
         this.inserirClienteNoHTML(novoCliente);
     }
 
-    // Método que vai inserir cada um dos clietes (na lista de clientes) no HTML
+    // Método que vai inserir cada um dos clientes (na lista de clientes) no HTML
     listar() {
         this.clientes.listar().forEach(
             cliente => {

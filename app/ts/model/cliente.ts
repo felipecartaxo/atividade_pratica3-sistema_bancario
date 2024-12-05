@@ -9,6 +9,7 @@ class Cliente {
     constructor(nome: string, cpf: string) {
         this._nome = nome;
         this._cpf = cpf;
+        this._conta = null;
     }
 
     // Getters e setters
@@ -32,12 +33,12 @@ class Cliente {
         return this._conta;
     }
 
-    set conta(novaConta: Conta) {
+    setConta(novaConta: Conta) {
         this._conta = novaConta;
     }
 
     // toString
     toString(): string {
-        return `Nome: ${this._nome} - CPF: ${this._cpf} `;
+        return `Nome: ${this._nome} - CPF: ${this._cpf} - Conta: ${this._conta.numero}`;
     }
 }
